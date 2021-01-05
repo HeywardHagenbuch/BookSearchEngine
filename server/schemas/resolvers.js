@@ -15,16 +15,16 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    // get a user by username
-    user: async (parent, { username }) => {
-      return User.findOne({ username })
-        .select("-__v -password")
-        .populate("books");
-    },
-    // get a user by id
-    userById: async (parent, { _id }) => {
-      return User.findOne({ _id }).select("-__v -password").populate("books");
-    },
+    // // get a user by username
+    // user: async (parent, { username }) => {
+    //   return User.findOne({ username })
+    //     .select("-__v -password")
+    //     .populate("books");
+    // },
+    // // get a user by id
+    // userById: async (parent, { _id }) => {
+    //   return User.findOne({ _id }).select("-__v -password").populate("books");
+    // },
   },
   Mutation: {
     createUser: async (parent, args) => {
