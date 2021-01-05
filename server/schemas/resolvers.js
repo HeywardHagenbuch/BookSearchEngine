@@ -55,7 +55,7 @@ const resolvers = {
 
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          // take the input type body as the arguement
+          // take the input type to replace "body" as the arguement
           { $addToSet: { savedBooks: args.input } },
           { new: true, runValidators: true }
         );
