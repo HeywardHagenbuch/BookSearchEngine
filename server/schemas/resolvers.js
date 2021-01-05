@@ -27,7 +27,7 @@ const resolvers = {
     // },
   },
   Mutation: {
-    createUser: async (parent, args) => {
+    addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
@@ -51,7 +51,6 @@ const resolvers = {
     },
     saveBook: async (parent, args, context) => {
       if (context.user) {
-
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           // take the input type to replace "body" as the arguement
